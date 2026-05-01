@@ -1,0 +1,25 @@
+[project]
+authors = [{ name = "jlnav", email = "jnavarro@anl.gov" }]
+dependencies = []
+name = "asmposmm"
+requires-python = ">= 3.11"
+version = "0.1.0"
+
+[build-system]
+build-backend = "hatchling.build"
+requires = ["hatchling"]
+
+[tool.pixi.workspace]
+channels = ["conda-forge"]
+platforms = ["osx-arm64"]
+
+[tool.pixi.pypi-dependencies]
+asmposmm = { path = ".", editable = true }
+
+[tool.pixi.tasks]
+
+[tool.pixi.dependencies]
+libensemble = ">=1.6.0,<2"
+scipy = ">=1.17.1,<2"
+fastapi = ">=0.136.1,<0.137"
+uvicorn = ">=0.46.0,<0.47"
